@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Monkey : MonoBehaviour
 {
@@ -17,7 +15,6 @@ public class Monkey : MonoBehaviour
     private Jingu _jinGu;
     private Quaternion monkeyRotationDefaut = quaternion.Euler(0,0,0);
 
-    public GameObject jingu;
     public GameObject UIgameOver;
     public GameObject UINextLeve;
 
@@ -95,6 +92,7 @@ public class Monkey : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Key"))
         {
             other.gameObject.SetActive(false);
@@ -119,6 +117,7 @@ public class Monkey : MonoBehaviour
     {
         transform.rotation = monkeyRotationDefaut;
         isMonkeyCollider = true;
+        
     }
 
     private void GameOver()

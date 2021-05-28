@@ -4,28 +4,46 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 973301482186294925
-    second: Monkey_walk0
+    second: Monkey_0
   - first:
       213: 380556255581113798
-    second: Monkey_walk1
+    second: Monkey_1
   - first:
       213: -3126637007553212853
-    second: Monkey_walk2
+    second: Monkey_2
   - first:
       213: 1312512685093574040
-    second: Monkey_walk3
+    second: Monkey_3
   - first:
       213: -3417608640951087975
-    second: Monkey_walk4
+    second: Monkey_4
   - first:
       213: 8310447215468986465
-    second: Monkey_walk5
+    second: Monkey_5
   - first:
       213: 6790817153897865592
-    second: Monkey_walk6
+    second: Monkey_6
   - first:
       213: 5181170193113884271
-    second: Monkey_walk7
+    second: Monkey_7
+  - first:
+      213: 3194209114609885929
+    second: Monkey_Jumb1
+  - first:
+      213: 2452815452774281763
+    second: Monkey_Jumb2
+  - first:
+      213: -6728433979161314248
+    second: Monkey_Jumb3
+  - first:
+      213: 904909004902295023
+    second: Monkey_Jumb6
+  - first:
+      213: -4517199890303991302
+    second: Monkey_Jumb4
+  - first:
+      213: 8505949084007869591
+    second: Monkey_Jumb5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,13 +157,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Monkey_walk0
+      name: Monkey_0
       rect:
         serializedVersion: 2
         x: 14
-        y: 240
+        y: 241
         width: 68
-        height: 99
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk1
+      name: Monkey_1
       rect:
         serializedVersion: 2
         x: 85
@@ -181,7 +199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk2
+      name: Monkey_2
       rect:
         serializedVersion: 2
         x: 153
@@ -202,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk3
+      name: Monkey_3
       rect:
         serializedVersion: 2
         x: 222
@@ -223,13 +241,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk4
+      name: Monkey_4
       rect:
         serializedVersion: 2
-        x: 295
+        x: 294
         y: 241
-        width: 71
-        height: 97
+        width: 72
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk5
+      name: Monkey_5
       rect:
         serializedVersion: 2
         x: 370
@@ -265,14 +283,14 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk6
+      name: Monkey_6
       rect:
         serializedVersion: 2
         x: 444
         y: 241
         width: 67
-        height: 99
-      alignment: 9
+        height: 98
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -286,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Monkey_walk7
+      name: Monkey_7
       rect:
         serializedVersion: 2
         x: 511
@@ -302,6 +320,132 @@ TextureImporter:
       bones: []
       spriteID: f662561f6d637e740800000000000000
       internalID: 5181170193113884271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Jumb1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 15
+        width: 62
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e223ae144c145c20800000000000000
+      internalID: 3194209114609885929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Jumb2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 14
+        width: 74
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3223332a8a62a0220800000000000000
+      internalID: 2452815452774281763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Jumb3
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 21
+        width: 61
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cfb69d1fccf92a0800000000000000
+      internalID: -6728433979161314248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Jumb6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 16
+        width: 67
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5e04f02f1ee8c00800000000000000
+      internalID: 904909004902295023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Jumb4
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 372
+        width: 60
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af14ff602aeaf41c0800000000000000
+      internalID: -4517199890303991302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Jumb5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 372
+        width: 60
+        height: 99
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c29dd10a33b0670800000000000000
+      internalID: 8505949084007869591
       vertices: []
       indices: 
       edges: []
