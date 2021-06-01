@@ -44,6 +44,18 @@ TextureImporter:
   - first:
       213: 8505949084007869591
     second: Monkey_Jumb5
+  - first:
+      213: 5583028820591347306
+    second: Monkey_Happy2
+  - first:
+      213: -1437575689659048706
+    second: Monkey_Happy1
+  - first:
+      213: -441535968389501457
+    second: Monkey_Happy3
+  - first:
+      213: 8331197387805264502
+    second: Monkey_happy4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -446,6 +458,90 @@ TextureImporter:
       bones: []
       spriteID: 79c29dd10a33b0670800000000000000
       internalID: 8505949084007869591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Happy2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 487
+        width: 86
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a668d16d127ea7d40800000000000000
+      internalID: 5583028820591347306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Happy1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 487
+        width: 63
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc9220e684bc0ce0800000000000000
+      internalID: -1437575689659048706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Happy3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 487
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fede59840695fd9f0800000000000000
+      internalID: -441535968389501457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_happy4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 124
+        width: 62
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a8bc532eb5e9370800000000000000
+      internalID: 8331197387805264502
       vertices: []
       indices: 
       edges: []

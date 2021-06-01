@@ -3,23 +3,28 @@ using UnityEngine;
 
 public class TestMonkey : MonoBehaviour
 {
-    private Quaternion target_90 = quaternion.Euler(0,0,90);
-    private Quaternion target_am90 = quaternion.Euler(0,0,-90);
-    public GameObject monkey;
-    public GameObject pivot;
-    public GameObject endPivot;
+    public GameObject T1;
+    public GameObject T2;
+    
+
+    private void Start()
+    {
+    }
+
     void Update()
     {
-        monkey.transform.position = endPivot.transform.position;
-        if (Input.GetKey(KeyCode.A))
-        {
-            
-            transform.rotation = Quaternion.Lerp(transform.rotation, target_90, 10*Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, target_am90, 10*Time.deltaTime);
-        }
+        transform.SetParent(T2.transform);
+        /*Debug.DrawRay(T1.transform.position, T1.transform.forward*6,Color.red);
+        Debug.DrawRay(T2.transform.position, T2.transform.forward*6,Color.red);
+        Debug.Log(Vector3.Angle(T1.transform.forward,T2.transform.forward));
+        Debug.Log(T1.transform.right);
+        Debug.Log(T1.transform.forward);*/
+        
+        Vector3 targetDir = T1.transform.position - T2.transform.position;
+        Debug.DrawRay(T1.transform.position, T1.transform.forward*6,Color.red);
+        Debug.DrawRay(T2.transform.position, T2.transform.forward*6,Color.red);
+        float angle = Vector3.Angle(targetDir, T2.transform.up);
+        Debug.Log(angle);
+        
     }
 }

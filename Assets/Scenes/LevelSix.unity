@@ -690,6 +690,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4371044145741063880, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
   m_PrefabInstance: {fileID: 650977145}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &650977148 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2497792700810584161, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+  m_PrefabInstance: {fileID: 650977145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &650977149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 954924952, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+  m_PrefabInstance: {fileID: 650977145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &777726160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -933,6 +943,14 @@ PrefabInstance:
       propertyPath: monkey
       value: 
       objectReference: {fileID: 650977147}
+    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
+      propertyPath: handMonkey
+      value: 
+      objectReference: {fileID: 650977149}
+    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
+      propertyPath: monkeyJumb
+      value: 
+      objectReference: {fileID: 650977148}
     - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
       propertyPath: isAudioSource
       value: 

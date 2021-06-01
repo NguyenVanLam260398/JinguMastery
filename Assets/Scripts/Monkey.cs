@@ -62,13 +62,14 @@ public class Monkey : MonoBehaviour
                 transform.Translate(new Vector3(1,0,0)*2*Time.deltaTime);
                 isRotationLeft = false;
             }
-
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        
+
         if (other.collider.CompareTag("Obstacle") || other.collider.CompareTag("EndGame") || other.collider.CompareTag("StartGame"))
         {
+            
+            isIntstanceID = other.gameObject.GetInstanceID();
             MonkeyCollider();
         }
         
@@ -106,9 +107,9 @@ public class Monkey : MonoBehaviour
         }
         if (other.CompareTag("Door") && isMonkeyHaveKey)
         {
-            isAudioSource.PlayOneShot(isWin,0.5f);
             MonkeyCollider();
             doorAnimator.SetBool("isDoor",true);
+            monkeyAnimator.Play("monkey_Happy");
             StartCoroutine("HidenMonkey");
         }
     }
@@ -130,9 +131,10 @@ public class Monkey : MonoBehaviour
 
     IEnumerator HidenMonkey()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         transform.gameObject.SetActive(false);
         UINextLeve.SetActive(true);
+        isAudioSource.PlayOneShot(isWin,0.5f);
     }
 
     public void Left()

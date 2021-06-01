@@ -13,7 +13,13 @@ TextureImporter:
     second: Coin
   - first:
       213: -7928145381205627445
-    second: Enemy
+    second: Enemy1
+  - first:
+      213: -2075499538463673679
+    second: Enemy2
+  - first:
+      213: 8902010000864326201
+    second: Enemy3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -190,11 +196,53 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy
+      name: Enemy1
       rect:
         serializedVersion: 2
         x: 165
         y: 679
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcda599e7c199f190800000000000000
+      internalID: -7928145381205627445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy2
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 678
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2b26e8a285233e0800000000000000
+      internalID: -2075499538463673679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy3
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 678
         width: 32
         height: 32
       alignment: 0
@@ -204,8 +252,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcda599e7c199f190800000000000000
-      internalID: -7928145381205627445
+      spriteID: 9323e705eea4a8b70800000000000000
+      internalID: 8902010000864326201
       vertices: []
       indices: 
       edges: []

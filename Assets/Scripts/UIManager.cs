@@ -34,12 +34,10 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel()
     {
-        Debug.Log(loadScene);
         SceneManager.LoadScene(loadScene+1, LoadSceneMode.Single);
         loadScene = SceneManager.GetActiveScene().buildIndex;
         UINextLeve.SetActive(false);
     }
-/*
 
     private void Update()
     {
@@ -47,5 +45,5 @@ public class UIManager : MonoBehaviour
         {
             this.NextLevel();  
         }
-    }*/
+    }
 }
