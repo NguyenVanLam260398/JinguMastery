@@ -80,7 +80,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6805080619881497046
 Transform:
   m_ObjectHideFlags: 0
@@ -168,6 +168,8 @@ MonoBehaviour:
   isdiMonkey: {fileID: 8300000, guid: 5dfdd1d1542e9ad4fbbcdb3b9db868eb, type: 3}
   isEatKey: {fileID: 8300000, guid: c9c68c43db552a3478d17d526b026a1a, type: 3}
   isWin: {fileID: 8300000, guid: d2b6159393eb48449a62bd94a8f4e3fe, type: 3}
+  pivot: {fileID: 0}
+  earMonkey: {fileID: 622198100745721849}
 --- !u!50 &1744831796
 Rigidbody2D:
   serializedVersion: 4

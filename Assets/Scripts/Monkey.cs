@@ -28,6 +28,8 @@ public class Monkey : MonoBehaviour
     public AudioClip isdiMonkey;
     public AudioClip isEatKey;
     public AudioClip isWin;
+    public GameObject pivot;
+    public GameObject earMonkey;
     void Start()
     {
         monkeyRigrid = GetComponent<Rigidbody2D>();
@@ -52,7 +54,7 @@ public class Monkey : MonoBehaviour
                 monkeyAnimator.SetBool("isMove",true);
                 transform.Translate(new Vector3(-1,0,0)*2*Time.deltaTime);
                 isRotationLeft = true;
-                
+                pivot.transform.position = earMonkey.transform.position;
             }
 
             if ((isButtonRight || Input.GetKey(KeyCode.D)) && isMoveMonkeyLeftRight)
@@ -61,6 +63,7 @@ public class Monkey : MonoBehaviour
                 monkeyAnimator.SetBool("isMove",true);
                 transform.Translate(new Vector3(1,0,0)*2*Time.deltaTime);
                 isRotationLeft = false;
+                pivot.transform.position = earMonkey.transform.position;
             }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -68,7 +71,6 @@ public class Monkey : MonoBehaviour
 
         if (other.collider.CompareTag("Obstacle") || other.collider.CompareTag("EndGame") || other.collider.CompareTag("StartGame"))
         {
-            
             isIntstanceID = other.gameObject.GetInstanceID();
             MonkeyCollider();
         }
@@ -111,6 +113,7 @@ public class Monkey : MonoBehaviour
             doorAnimator.SetBool("isDoor",true);
             monkeyAnimator.Play("monkey_Happy");
             StartCoroutine("HidenMonkey");
+            isAudioSource.PlayOneShot(isWin,0.4f);
         }
     }
 
@@ -118,7 +121,6 @@ public class Monkey : MonoBehaviour
     {
         transform.rotation = monkeyRotationDefaut;
         isMonkeyCollider = true;
-        
     }
 
     private void GameOver()
@@ -131,10 +133,9 @@ public class Monkey : MonoBehaviour
 
     IEnumerator HidenMonkey()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         transform.gameObject.SetActive(false);
         UINextLeve.SetActive(true);
-        isAudioSource.PlayOneShot(isWin,0.5f);
     }
 
     public void Left()

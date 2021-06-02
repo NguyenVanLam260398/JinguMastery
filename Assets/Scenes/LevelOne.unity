@@ -133,6 +133,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8377383350876431743, guid: a21cf2561f75e53488c8246e5e149736, type: 3}
   m_PrefabInstance: {fileID: 7314752149127247972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &305511488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7818171550022458345, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
+  m_PrefabInstance: {fileID: 6678604475297050312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &844254432 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6570962876444484976, guid: b5f0e888a30424440aef3327e9764c7c, type: 3}
@@ -330,6 +335,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3160173745660756289, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+      propertyPath: pivot
+      value: 
+      objectReference: {fileID: 844254432}
     - target: {fileID: 3160173745660756289, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
       propertyPath: UINextLeve
       value: 
@@ -687,6 +696,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744831798}
     - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
+      propertyPath: jingu
+      value: 
+      objectReference: {fileID: 305511488}
+    - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
       propertyPath: monkey
       value: 
       objectReference: {fileID: 1744831795}
@@ -922,6 +935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jingu
       objectReference: {fileID: 0}
+    - target: {fileID: 7818171550022458345, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7818171550022458347, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -979,14 +996,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1744831797}
     - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
-      propertyPath: spriteOne
-      value: 
-      objectReference: {fileID: 2452815452774281763, guid: 95d11c985a13ed1479aefa3b4544952b, type: 3}
-    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
-      propertyPath: spriteTwo
-      value: 
-      objectReference: {fileID: -6728433979161314248, guid: 95d11c985a13ed1479aefa3b4544952b, type: 3}
-    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
       propertyPath: handMonkey
       value: 
       objectReference: {fileID: 954924952}
@@ -998,10 +1007,6 @@ PrefabInstance:
       propertyPath: isAudioSource
       value: 
       objectReference: {fileID: 890511682}
-    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
-      propertyPath: spriteDefautl
-      value: 
-      objectReference: {fileID: 6790817153897865592, guid: 95d11c985a13ed1479aefa3b4544952b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
 --- !u!1001 &7314752149127247972
@@ -1123,7 +1128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
   m_PrefabInstance: {fileID: 6678604475297050312}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 305511488}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84c132f637b718e4cacf0056e1e832e5, type: 3}

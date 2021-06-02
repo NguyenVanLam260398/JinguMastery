@@ -433,6 +433,10 @@ PrefabInstance:
       value: StopMove
       objectReference: {fileID: 0}
     - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
+      propertyPath: jingu
+      value: 
+      objectReference: {fileID: 1567540697}
+    - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
       propertyPath: monkey
       value: 
       objectReference: {fileID: 1074779511}
@@ -547,9 +551,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 532524655939425167, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_Size.x
+      value: 2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 532524655939425167, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 532524655939425167, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3714874631914570996, guid: ef06f806e58b3ef43ae77530cb868ebc, type: 3}
     - target: {fileID: 3776009173232377988, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
       propertyPath: m_Name
       value: ObstacleDie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430914301665539205, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430914301665539205, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430914301665539205, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430914301665539205, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430914301665539205, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32b64317081cd849a3df40bca83dfcc, type: 3}
@@ -787,6 +823,10 @@ PrefabInstance:
       propertyPath: monkey
       value: 
       objectReference: {fileID: 1074779511}
+    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
+      propertyPath: EarMonkey
+      value: 
+      objectReference: {fileID: 2045562019}
     - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
       propertyPath: handMonkey
       value: 
@@ -1159,6 +1199,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1567540697}
     - target: {fileID: 3160173745660756289, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+      propertyPath: pivot
+      value: 
+      objectReference: {fileID: 1888539575}
+    - target: {fileID: 3160173745660756289, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
       propertyPath: UINextLeve
       value: 
       objectReference: {fileID: 477375041}
@@ -1232,5 +1276,10 @@ Animator:
 --- !u!1 &2045562018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 954924952, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+  m_PrefabInstance: {fileID: 2045562016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2045562019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 622198100745721849, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
   m_PrefabInstance: {fileID: 2045562016}
   m_PrefabAsset: {fileID: 0}

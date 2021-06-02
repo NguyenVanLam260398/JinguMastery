@@ -486,6 +486,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1445195332}
     - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
+      propertyPath: EarMonkey
+      value: 
+      objectReference: {fileID: 2120622882}
+    - target: {fileID: 7818171550022460438, guid: 05c0d9988b24d5749b78d2203a5e4d3b, type: 3}
       propertyPath: handMonkey
       value: 
       objectReference: {fileID: 2120622881}
@@ -1097,6 +1101,10 @@ PrefabInstance:
       value: StopMove
       objectReference: {fileID: 0}
     - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
+      propertyPath: jingu
+      value: 
+      objectReference: {fileID: 1015224237}
+    - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
       propertyPath: monkey
       value: 
       objectReference: {fileID: 1445195332}
@@ -1224,6 +1232,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1015224237}
     - target: {fileID: 3160173745660756289, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+      propertyPath: pivot
+      value: 
+      objectReference: {fileID: 1937121545}
+    - target: {fileID: 3160173745660756289, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
       propertyPath: UINextLeve
       value: 
       objectReference: {fileID: 577861788}
@@ -1297,6 +1309,11 @@ Animator:
 --- !u!1 &2120622881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 954924952, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
+  m_PrefabInstance: {fileID: 2120622879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2120622882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 622198100745721849, guid: 881c94a10266edf4e81d02adc5d6d526, type: 3}
   m_PrefabInstance: {fileID: 2120622879}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2130166449

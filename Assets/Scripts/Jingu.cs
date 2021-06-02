@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -7,13 +5,15 @@ public class Jingu : MonoBehaviour
 {
     private Rigidbody2D jinguRB;
     private SpriteRenderer monkeySpriteRenderer;
-    public Sprite spriteOne;
-    public Sprite spriteTwo;
+    public  Sprite spriteOne;
+    public  Sprite spriteTwo;
     private Sprite spriteDefautl;
     
     private Quaternion target_right = Quaternion.Euler(0,0,-89);
     private Quaternion target_Left = Quaternion.Euler(0,0,89);
     private Quaternion target_0 = quaternion.Euler(0,0,0);
+    
+    private Vector3 localScalePivotDefaut = new Vector3(1,1,1);
     
     public static bool _isFinishScale;
     public  bool isRotation;
@@ -25,8 +25,6 @@ public class Jingu : MonoBehaviour
     private bool scaleJingu;
     private bool doneScaleJingu;
     private bool isAnimation;
-    
-    private Vector3 localScalePivotDefaut = new Vector3(1,1,1);
     
     public GameObject startPivot;
     public GameObject endPivot;
@@ -56,7 +54,6 @@ public class Jingu : MonoBehaviour
     }
     void Update()
     {
-        
         if (UIManager.isPlay)
         {
             if(scaleJingu && isScaleJingu)
@@ -69,9 +66,10 @@ public class Jingu : MonoBehaviour
                    isPlayAudio = true;
                    PlayAudio();
                    isAnimation = true;
-                   if (pivot.transform.localScale.y <20)
+                   if (pivot.transform.localScale.y < 20)
                    {
-                       pivot.transform.localScale = pivot.transform.localScale + new Vector3(0, 4*Time.deltaTime, 0);
+                       pivot.transform.localScale = pivot.transform.localScale + new Vector3(0, 10*Time.deltaTime, 0);
+                       Debug.Log(pivot.transform.localScale);
                    }
 
                    if (pivot.transform.localScale.y >= 20)
@@ -81,7 +79,6 @@ public class Jingu : MonoBehaviour
             }
             if (doneScaleJingu && isScaleJingu)
             {
-                
                 isReloadAudio = true;
                 isScaleJingu = false;
                 isRotation = true;
@@ -98,7 +95,7 @@ public class Jingu : MonoBehaviour
                 transform.rotation = target_0;
                 isReplayQuaternionJingu = false;    
                 pivot.transform.rotation = target_0;
-                transform.SetParent(EarMonkey.transform);
+                transform.SetParent(handMonkey.transform);
                 isScaleJingu = true;
                 transform.localPosition = new Vector3(0,0,0);
                 scaleJingu = false;
@@ -107,7 +104,6 @@ public class Jingu : MonoBehaviour
                 {
                     monkeyJumb.Play("MonkeyScaleJungu");
                     isAnimation = false;
-                    Debug.Log("Zo function roi");
                 }
             }
         }
@@ -126,17 +122,16 @@ public class Jingu : MonoBehaviour
             }
         }
     }
-
     private void QuaternionJingu()
     {
         if (isRotation && Monkey.isRotationLeft)
         {
             pivot.transform.rotation = Quaternion.Lerp(transform.rotation, target_Left,Time.deltaTime);
             monkey.transform.position = endPivot.transform.position;
-            if (pivot.transform.rotation.z > 0 && pivot.transform.rotation.z < 0.3f)
+            if (pivot.transform.rotation.z > 0 && pivot.transform.rotation.z < 0.5f)
             {
                 monkeySpriteRenderer.sprite = spriteOne;
-            }else if (pivot.transform.rotation.z >= 0.3f && pivot.transform.rotation.z < 0.5f)
+            }else if (pivot.transform.rotation.z >= 0.5f && pivot.transform.rotation.z < 0.7f)
             {
                 monkeySpriteRenderer.sprite = spriteTwo;
             }else
@@ -150,15 +145,14 @@ public class Jingu : MonoBehaviour
                 ReplayQuaternionJingu();
             }
         }
-
         if (isRotation && Monkey.isRotationLeft == false)
         {
             pivot.transform.rotation = Quaternion.Lerp(transform.rotation, target_right,Time.deltaTime);
             monkey.transform.position = endPivot.transform.position;
-            if (pivot.transform.rotation.z < 0 && pivot.transform.rotation.z > -0.3f)
+            if (pivot.transform.rotation.z < 0 && pivot.transform.rotation.z > -0.5f)
             {
                 monkeySpriteRenderer.sprite = spriteOne;
-            }else if (pivot.transform.rotation.z <= -0.3f && pivot.transform.rotation.z > -0.5f)
+            }else if (pivot.transform.rotation.z <= -0.5f && pivot.transform.rotation.z > -0.7f)
             {
                 monkeySpriteRenderer.sprite = spriteTwo;
             }else
@@ -186,7 +180,6 @@ public class Jingu : MonoBehaviour
             pivot.transform.rotation = Quaternion.Lerp(transform.rotation,target_right,10*Time.deltaTime);
         }
     }
-
     public void jinguColliderObstacle()
     {
         DetachMonkey();
@@ -200,7 +193,6 @@ public class Jingu : MonoBehaviour
         transform.SetParent(null);
         pivot.transform.position = endPivot.transform.position;
     }
-
     private void PlayAudio()
     {
         if (isPlayAudio && isReloadAudio)
@@ -209,13 +201,13 @@ public class Jingu : MonoBehaviour
             isReloadAudio = false;
         }
     }
-
     public void ScaleJingu()
     {
+        var allJinguComponents = GetComponents<Jingu>();
+        Debug.Log("Jingu Count: " + allJinguComponents.Length);
         scaleJingu = true;
         doneScaleJingu = false;
     }
-
     public void DoneScaleJingu()
     {
         scaleJingu = false;
