@@ -1,30 +1,19 @@
+using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class TestMonkey : MonoBehaviour
 {
-    public GameObject T1;
-    public GameObject T2;
-    
+    public Transform t1;
+    public Transform t2;
 
-    private void Start()
+    private float s = 1;
+    // Update is called once per frame
+    void Update () 
     {
-    }
-
-    void Update()
-    {
-        transform.SetParent(T2.transform);
-        /*Debug.DrawRay(T1.transform.position, T1.transform.forward*6,Color.red);
-        Debug.DrawRay(T2.transform.position, T2.transform.forward*6,Color.red);
-        Debug.Log(Vector3.Angle(T1.transform.forward,T2.transform.forward));
-        Debug.Log(T1.transform.right);
-        Debug.Log(T1.transform.forward);*/
-        
-        Vector3 targetDir = T1.transform.position - T2.transform.position;
-        Debug.DrawRay(T1.transform.position, T1.transform.forward*6,Color.red);
-        Debug.DrawRay(T2.transform.position, T2.transform.forward*6,Color.red);
-        float angle = Vector3.Angle(targetDir, T2.transform.up);
-        Debug.Log(angle);
-        
+        if( Input.GetKey(KeyCode.A) )
+        {
+            transform.DORotate(new Vector3(0,0,90), 10,RotateMode.Fast);
+        }
     }
 }

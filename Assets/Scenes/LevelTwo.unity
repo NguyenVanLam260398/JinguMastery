@@ -1100,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StopMove
       objectReference: {fileID: 0}
+    - target: {fileID: 4267562705627920029, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4267562706773717764, guid: 5e91a1c326d625d419c6cad1e9cb775e, type: 3}
       propertyPath: jingu
       value: 

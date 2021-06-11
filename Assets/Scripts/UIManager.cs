@@ -10,9 +10,14 @@ public class UIManager : MonoBehaviour
     private int loadScene;
     public GameObject monkey;
     public GameObject jingu;
+    public GameObject buttonScale;
     private void Awake()
     {
         loadScene = SceneManager.GetActiveScene().buildIndex;
+        if (loadScene >= 1)
+        {
+            ButtonGameStart();
+        }
     }
 
     private void Start()
@@ -25,7 +30,8 @@ public class UIManager : MonoBehaviour
         isPlay = true;
         UIStart.SetActive(false);
         monkey.SetActive(true);
-        jingu.SetActive(true);
+        jingu.SetActive(true);  
+        buttonScale.SetActive(true);
     }
 
     public void ResetGame()

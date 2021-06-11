@@ -56,6 +56,9 @@ TextureImporter:
   - first:
       213: 8331197387805264502
     second: Monkey_happy4
+  - first:
+      213: 1865598775533027292
+    second: Monkey_Diaa
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -471,7 +474,7 @@ TextureImporter:
         width: 86
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -492,7 +495,7 @@ TextureImporter:
         width: 63
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -513,7 +516,7 @@ TextureImporter:
         width: 64
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -534,7 +537,7 @@ TextureImporter:
         width: 62
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -542,6 +545,27 @@ TextureImporter:
       bones: []
       spriteID: 67a8bc532eb5e9370800000000000000
       internalID: 8331197387805264502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monkey_Diaa
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 487
+        width: 62
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfbc05b330f3e910800000000000000
+      internalID: 1865598775533027292
       vertices: []
       indices: 
       edges: []

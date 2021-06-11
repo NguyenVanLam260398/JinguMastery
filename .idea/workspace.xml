@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02c099d2-efaa-49be-9192-aa4321b3ff26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Jingu Mastery/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Jingu Mastery/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Jingu Mastery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Jingu Mastery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animators/AnimatorsDoor/OpenDoor.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animators/AnimatorsDoor/OpenDoor.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animators/AnimatorsMonkey/MonkeyAnimatorController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animators/AnimatorsMonkey/MonkeyAnimatorController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animators/AnimatorsMonkey/monkey_Happy.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animators/AnimatorsMonkey/monkey_Happy.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Jingu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Jingu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelFive.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelFive.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelOne.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelOne.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelTwo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelTwo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jingu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Jingu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monkey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monkey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestMonkey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestMonkey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Jingu/Jingu1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Jingu/Jingu1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Jingu/Jingu2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Jingu/Jingu2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Monkey.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Monkey.png.meta" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tkS3SjwSsOGLHSb385jg5Y1t8h" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets/Scripts" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02c099d2-efaa-49be-9192-aa4321b3ff26" name="Default Changelist" comment="" />
+      <created>1623311401532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623311401532</updated>
+      <workItem from="1623311406310" duration="140000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.cs" />
+  </component>
+</project>

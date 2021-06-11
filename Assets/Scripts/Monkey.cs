@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Monkey : MonoBehaviour
 {
+    private SpriteRenderer monkeySpriteRenderer;
+    public Sprite spriteMonkeyDie;
+    
     public static Rigidbody2D monkeyRigrid;
     public static bool isRotationLeft;
     public static bool isMonkeyCollider;
     public static bool isMoveMonkeyLeftRight;
+    public static bool isGameOver;
     private bool isMonkeyHaveKey;
     private bool isButtonLeft;
     private bool isButtonRight;
@@ -17,8 +21,10 @@ public class Monkey : MonoBehaviour
 
     public GameObject UIgameOver;
     public GameObject UINextLeve;
+    public GameObject buttonScale;
 
     private float isLeftRight;
+    private int countCollider = 0; 
     public static int isIntstanceID;
 
     public Animator monkeyAnimator;
@@ -32,6 +38,7 @@ public class Monkey : MonoBehaviour
     public GameObject earMonkey;
     void Start()
     {
+        monkeySpriteRenderer = GetComponent<SpriteRenderer>();
         monkeyRigrid = GetComponent<Rigidbody2D>();
         _jinGu = FindObjectOfType<Jingu>().GetComponent<Jingu>();
         isMoveMonkeyLeftRight = true;
@@ -95,7 +102,7 @@ public class Monkey : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+          
         if (other.CompareTag("Key"))
         {
             other.gameObject.SetActive(false);
@@ -105,7 +112,19 @@ public class Monkey : MonoBehaviour
 
         if (other.CompareTag("GameOver"))
         {
-            GameOver();
+            countCollider++;
+            if (countCollider == 1)
+            {
+                isAudioSource.PlayOneShot(isdiMonkey,0.2f);
+                monkeyRigrid.AddForce(Vector2.up*17,ForceMode2D.Impulse);
+                monkeyAnimator.enabled = false;
+                monkeySpriteRenderer.sprite = spriteMonkeyDie;
+                isMonkeyCollider = true;
+            }
+            else
+            {
+                GameOver();
+            }
         }
         if (other.CompareTag("Door") && isMonkeyHaveKey)
         {
@@ -114,6 +133,7 @@ public class Monkey : MonoBehaviour
             monkeyAnimator.Play("monkey_Happy");
             StartCoroutine("HidenMonkey");
             isAudioSource.PlayOneShot(isWin,0.4f);
+            buttonScale.SetActive(false);
         }
     }
 
@@ -125,10 +145,10 @@ public class Monkey : MonoBehaviour
 
     private void GameOver()
     {
-        isAudioSource.PlayOneShot(isdiMonkey,0.2f);
         UIgameOver.SetActive(true);
         transform.gameObject.SetActive(false);
-        Debug.Log("Game Over");
+        buttonScale.SetActive(false);
+        isGameOver = true;
     }
 
     IEnumerator HidenMonkey()
