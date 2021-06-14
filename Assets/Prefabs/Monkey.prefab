@@ -73,14 +73,14 @@ GameObject:
   - component: {fileID: 3160173745660756289}
   - component: {fileID: 1744831796}
   - component: {fileID: 2497792700810584161}
-  - component: {fileID: 1744831797}
+  - component: {fileID: 8536913916160531539}
   m_Layer: 0
   m_Name: Monkey
   m_TagString: Monkey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6805080619881497046
 Transform:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 680b8f031477acf4b9d66db9da58a2f7, type: 3}
   m_Color: {r: 1, g: 0.42050022, b: 0, a: 1}
   m_FlipX: 0
@@ -160,8 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10679c10cac299b4596b7ee71189c0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteMonkeyDie: {fileID: 1865598775533027292, guid: 95d11c985a13ed1479aefa3b4544952b, type: 3}
   UIgameOver: {fileID: 0}
   UINextLeve: {fileID: 0}
+  buttonScale: {fileID: 0}
   monkeyAnimator: {fileID: 2497792700810584161}
   doorAnimator: {fileID: 0}
   isAudioSource: {fileID: 0}
@@ -189,7 +191,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &2497792700810584161
 Animator:
@@ -210,7 +212,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1744831797
+--- !u!61 &8536913916160531539
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,5 +236,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.67, y: 1}
+  m_Size: {x: 0.7, y: 1.01}
   m_EdgeRadius: 0

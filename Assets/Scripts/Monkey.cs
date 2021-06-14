@@ -12,9 +12,11 @@ public class Monkey : MonoBehaviour
     public static bool isMonkeyCollider;
     public static bool isMoveMonkeyLeftRight;
     public static bool isGameOver;
+    public static bool isMonkeyCanScaleJingu;
     private bool isMonkeyHaveKey;
     private bool isButtonLeft;
     private bool isButtonRight;
+    
 
     private Jingu _jinGu;
     private Quaternion monkeyRotationDefaut = quaternion.Euler(0,0,0);
@@ -24,7 +26,7 @@ public class Monkey : MonoBehaviour
     public GameObject buttonScale;
 
     private float isLeftRight;
-    private int countCollider = 0; 
+    public static int countCollider = 0; 
     public static int isIntstanceID;
 
     public Animator monkeyAnimator;
@@ -45,6 +47,7 @@ public class Monkey : MonoBehaviour
         isMonkeyCollider = false;
         isButtonLeft = false;
         isButtonRight = false;
+        isMonkeyCanScaleJingu = false;
     }
     void Update()
     {
@@ -73,13 +76,16 @@ public class Monkey : MonoBehaviour
                 pivot.transform.position = earMonkey.transform.position;
             }
     }
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        isMonkeyCanScaleJingu = true;
         if (other.collider.CompareTag("Obstacle") || other.collider.CompareTag("EndGame") || other.collider.CompareTag("StartGame"))
         {
             isIntstanceID = other.gameObject.GetInstanceID();
+            Debug.Log(isIntstanceID);
             MonkeyCollider();
+            
         }
         
         if (other.collider.CompareTag("ObstacleDie"))
@@ -113,6 +119,7 @@ public class Monkey : MonoBehaviour
         if (other.CompareTag("GameOver"))
         {
             countCollider++;
+            _jinGu.gameObject.SetActive(false);
             if (countCollider == 1)
             {
                 isAudioSource.PlayOneShot(isdiMonkey,0.2f);
@@ -135,6 +142,11 @@ public class Monkey : MonoBehaviour
             isAudioSource.PlayOneShot(isWin,0.4f);
             buttonScale.SetActive(false);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isMonkeyCanScaleJingu = false;
     }
 
     public void MonkeyCollider()
@@ -174,5 +186,6 @@ public class Monkey : MonoBehaviour
     {
         isButtonLeft = false;
         isButtonRight = false;
+        monkeyAnimator.Play("MonkeyIdle");
     }
 }

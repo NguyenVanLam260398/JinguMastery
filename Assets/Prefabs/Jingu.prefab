@@ -253,7 +253,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7818171550022458345}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.3242, y: -1.3493, z: 0}
   m_LocalScale: {x: 0.9, y: 0.4384203, z: 1}
   m_Children:
@@ -374,6 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteOne: {fileID: 2452815452774281763, guid: 95d11c985a13ed1479aefa3b4544952b, type: 3}
   spriteTwo: {fileID: -6728433979161314248, guid: 95d11c985a13ed1479aefa3b4544952b, type: 3}
+  _isFinishScale: 0
   isRotation: 0
   startPivot: {fileID: 5435950356461063325}
   endPivot: {fileID: 3890164960102207097}

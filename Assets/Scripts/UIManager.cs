@@ -11,6 +11,9 @@ public class UIManager : MonoBehaviour
     public GameObject monkey;
     public GameObject jingu;
     public GameObject buttonScale;
+    public Animator monkeyAnimatorUI;
+    private SpriteRenderer monkeySpriteRendererUI;
+    public Sprite monkeySpriteDefault;
     private void Awake()
     {
         loadScene = SceneManager.GetActiveScene().buildIndex;
@@ -22,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        monkeySpriteRendererUI = monkey.GetComponent<SpriteRenderer>();
         isPlay = false;
     }
 
@@ -36,8 +40,24 @@ public class UIManager : MonoBehaviour
 
     public void ResetGame()
     {
-        SceneManager.LoadScene(loadScene, LoadSceneMode.Single);
-        UIGameOver.SetActive(false);
+        if (loadScene == 0)
+        {
+            monkey.transform.position = new Vector3(-5.485f,-1.873843f,0);
+            jingu.transform.position = new Vector3(-5.3242f,-1.3493f,0);
+            monkey.gameObject.SetActive(true);
+            jingu.gameObject.SetActive(true);
+            Monkey.isGameOver = false;
+            monkeySpriteRendererUI.sprite = monkeySpriteDefault;
+            buttonScale.SetActive(true);
+            UIGameOver.SetActive(false);
+            monkeyAnimatorUI.enabled = true;
+            Monkey.countCollider = 0;
+        }
+        else
+        {
+            SceneManager.LoadScene(loadScene, LoadSceneMode.Single);
+            UIGameOver.SetActive(false);
+        }
     }
 
     public void NextLevel()
