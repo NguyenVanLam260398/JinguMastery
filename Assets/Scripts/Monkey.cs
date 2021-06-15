@@ -11,8 +11,6 @@ public class Monkey : MonoBehaviour
     public static bool isRotationLeft;
     public static bool isMonkeyCollider;
     public static bool isMoveMonkeyLeftRight;
-    public static bool isGameOver;
-    public static bool isMonkeyCanScaleJingu;
     private bool isMonkeyHaveKey;
     private bool isButtonLeft;
     private bool isButtonRight;
@@ -47,7 +45,6 @@ public class Monkey : MonoBehaviour
         isMonkeyCollider = false;
         isButtonLeft = false;
         isButtonRight = false;
-        isMonkeyCanScaleJingu = false;
     }
     void Update()
     {
@@ -79,11 +76,9 @@ public class Monkey : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        isMonkeyCanScaleJingu = true;
         if (other.collider.CompareTag("Obstacle") || other.collider.CompareTag("EndGame") || other.collider.CompareTag("StartGame"))
         {
             isIntstanceID = other.gameObject.GetInstanceID();
-            Debug.Log(isIntstanceID);
             MonkeyCollider();
             
         }
@@ -144,10 +139,6 @@ public class Monkey : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        isMonkeyCanScaleJingu = false;
-    }
 
     public void MonkeyCollider()
     {
@@ -160,7 +151,6 @@ public class Monkey : MonoBehaviour
         UIgameOver.SetActive(true);
         transform.gameObject.SetActive(false);
         buttonScale.SetActive(false);
-        isGameOver = true;
     }
 
     IEnumerator HidenMonkey()

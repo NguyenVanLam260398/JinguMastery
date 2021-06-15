@@ -46,7 +46,6 @@ public class UIManager : MonoBehaviour
             jingu.transform.position = new Vector3(-5.3242f,-1.3493f,0);
             monkey.gameObject.SetActive(true);
             jingu.gameObject.SetActive(true);
-            Monkey.isGameOver = false;
             monkeySpriteRendererUI.sprite = monkeySpriteDefault;
             buttonScale.SetActive(true);
             UIGameOver.SetActive(false);

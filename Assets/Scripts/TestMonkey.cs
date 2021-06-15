@@ -8,7 +8,6 @@ public class TestMonkey : MonoBehaviour
     public Transform t2;
 
     private float s = 1;
-    // Update is called once per frame
     void Update () 
     {
         if( Input.GetKey(KeyCode.A) )

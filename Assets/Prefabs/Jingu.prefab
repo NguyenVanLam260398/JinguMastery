@@ -381,10 +381,8 @@ MonoBehaviour:
   pivot: {fileID: 0}
   monkey: {fileID: 0}
   handMonkey: {fileID: 0}
-  EarMonkey: {fileID: 0}
   t1: {fileID: 6297465236892507100}
   t2: {fileID: 6297465235467770839}
-  curentObstacleInstanceID: 0
   isAudioSource: {fileID: 0}
   isAudioScaleJingu: {fileID: 8300000, guid: 666bcf03d439520488cb0e34e7eeb9a0, type: 3}
   monkeyJumb: {fileID: 0}

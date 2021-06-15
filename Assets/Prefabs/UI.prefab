@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3312905881118546994
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -137.418}
-  m_SizeDelta: {x: 400, y: 175.424}
+  m_AnchoredPosition: {x: 118.62376, y: -0.043524}
+  m_SizeDelta: {x: 562.7523, y: 450.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3312905881118547005
 CanvasRenderer:
@@ -1584,6 +1584,10 @@ MonoBehaviour:
   UIGameOver: {fileID: 4267562707328756417}
   UINextLeve: {fileID: 4267562705775541083}
   monkey: {fileID: 0}
+  jingu: {fileID: 0}
+  buttonScale: {fileID: 3312905881118546993}
+  monkeyAnimatorUI: {fileID: 0}
+  monkeySpriteDefault: {fileID: 21300000, guid: 680b8f031477acf4b9d66db9da58a2f7, type: 3}
 --- !u!1 &4267562707032569303
 GameObject:
   m_ObjectHideFlags: 0
