@@ -4,31 +4,58 @@ using UnityEngine;
 
 public class Jingu : MonoBehaviour
 {
-    private Rigidbody2D jinguRB;
+    public enum JinguState
+    {
+        Init,
+        ReadyToScale,
+        ScalingOut,
+        Rotating,
+        StopRotating,
+        ScalingIn
+    }
+
+    private JinguState mJinguState = JinguState.Init;
+
+    public JinguState jinguState
+    {
+        get { return mJinguState; }
+        set
+        {
+            Debug.Log("State from: " + mJinguState + " => " + value);
+            mJinguState = value;
+        }
+    }
     private SpriteRenderer monkeySpriteRenderer;
     public  Sprite spriteOne;
     public  Sprite spriteTwo;
-    private Sprite spriteDefautl;
+    private Sprite spriteDefault;
     
-    private Quaternion target_right = Quaternion.Euler(0,0,-90);
-    private Quaternion target_Left = Quaternion.Euler(0,0,90);
-    private Quaternion target_0 = quaternion.Euler(0,0,0);
+    private Quaternion rightAngle = Quaternion.Euler(0,0,-90);
+    private Quaternion leftAngle = Quaternion.Euler(0,0,90);
+    private Quaternion middleAngle = quaternion.Euler(0,0,0);
     
-    private Vector3 localScalePivotDefaut = new Vector3(1,1,1);
-    
-    public  bool _isFinishScale;
-    public  bool isRotation;
-    private bool isReplayQuaternionJingu = false;
-    private bool isScaleJingu;
-    private bool isPlayAudio;
-    private bool isReloadAudio;
-    private bool isReplayQuaternionDone;
-    private bool scaleJingu;
-    private bool doneScaleJingu;
-    private bool isAnimation;
-    private bool isJinguCollider;
-    private bool isSwichMonkeyCollider;
-    
+    private Vector3 defaultPivotScale = new Vector3(1,1,1);
+    public bool  isRotating { get; private set; }
+    private bool isJinguScalingIn = false;
+    private bool isJinguScalingOut;
+    private bool isScalingOutAudioPlaying;
+    private bool isScaleButtonDown;
+    private bool isScaleButtonUp;
+    private bool mIsMonkeyCollideWithObstacle;
+
+    private bool isMonkeyCollideWithObstacle
+    {
+        get
+        {
+            return mIsMonkeyCollideWithObstacle;
+        }
+        set
+        {
+            Debug.Log("Is Monkey Collide: " + mIsMonkeyCollideWithObstacle + "=>" + value);
+            mIsMonkeyCollideWithObstacle = value;
+        }
+    }
+
     public GameObject startPivot;
     public GameObject endPivot;
     public GameObject pivot;
@@ -44,110 +71,132 @@ public class Jingu : MonoBehaviour
     public AudioClip isAudioScaleJingu;
     
     public Animator monkeyJumb;
+    private Sequence rotateSequence = null;
+    private bool isFirstTimeCollide = true;
     
     void Start()
     {
         monkeySpriteRenderer = monkey.GetComponent<SpriteRenderer>();
-        spriteDefautl = monkeySpriteRenderer.sprite;
-        jinguRB = GetComponent<Rigidbody2D>();
+        spriteDefault = monkeySpriteRenderer.sprite;
         transform.SetParent(monkey.transform);
         transform.localPosition = new Vector3(0.2f,0.32f,0);
-        isScaleJingu = true;
-        isPlayAudio = false;
-        isReloadAudio = true;
-        isSwichMonkeyCollider = false;
+        isJinguScalingOut = true;
+        isScalingOutAudioPlaying = false;
+        Monkey.onMonkeyCollide += OnMonkeyCollideWithObstacle;
     }
+
+    private void OnDestroy()
+    {
+        Monkey.onMonkeyCollide -= OnMonkeyCollideWithObstacle;
+    }
+
     void Update()
     {
         if (UIManager.isPlay)
         {
-            if(scaleJingu && isScaleJingu)
+            switch (jinguState)
             {
-                   Monkey.isMonkeyCollider = false;
-                   Monkey.isMoveMonkeyLeftRight = false;
-                   transform.SetParent(null);
-                   pivot.transform.position = startPivot.transform.position;
-                   transform.SetParent(pivot.transform);
-                   isPlayAudio = true;
-                   PlayAudio();
-                   isAnimation = true;
-                   if (pivot.transform.localScale.y < 20)
-                   {
-                       //transform.DetachChildren();                 
-                       t1.SetParent(null);
-                       t2.SetParent(null);
-                       pivot.transform.localScale = pivot.transform.localScale + new Vector3(0,6*Time.deltaTime, 0); 
-                       t1.parent = endPivot.transform;
-                       t1.localPosition = new Vector3(0,0,0);
-                       t2.parent = startPivot.transform;
-                       t2.localPosition = new Vector3(0,0,0);
-                   }
+                case JinguState.Init:
+                    Debug.Log("Init Jingu");
+                    // Khoi tao gay, monkey
+                    transform.SetParent(null);
+                    transform.rotation = middleAngle;
+                    pivot.transform.rotation = middleAngle;
+                    transform.SetParent(handMonkey.transform);
+                    transform.localPosition = new Vector3(0.35f,0.52f,0);
+                    jinguState = JinguState.ReadyToScale;
+                    rotateSequence = null;
+                    isMonkeyCollideWithObstacle = false;
+                    break;
+                case JinguState.ScalingOut:
+                    Debug.Log("Scaling out...");
+                    // Logic gian giay ra
+                    transform.SetParent(null);
+                    pivot.transform.position = startPivot.transform.position;
+                    transform.SetParent(pivot.transform);
+                    PlayAudio();
+                    if (pivot.transform.localScale.y < 20)
+                    {
+                        t1.SetParent(null);
+                        t2.SetParent(null);
+                        pivot.transform.localScale = pivot.transform.localScale + new Vector3(0,6*Time.deltaTime, 0); 
+                        t1.parent = endPivot.transform;
+                        t1.localPosition = new Vector3(0,0,0);
+                        t2.parent = startPivot.transform;
+                        t2.localPosition = new Vector3(0,0,0);
+                    }
 
-                   if (pivot.transform.localScale.y >= 20)
-                   {
-                      pivot.transform.localScale = localScalePivotDefaut;
-                   }
-            }
-            if (doneScaleJingu && isScaleJingu)
-            {
-                isSwichMonkeyCollider = true;
-                isReloadAudio = true;
-                isScaleJingu = false;
-                isRotation = true;
-                QuaternionjinguDotween();
-                InvokeRepeating("EffectsWhenSpinning",0,0.000011f);
-            }
-
-            if (isReplayQuaternionJingu && pivot.transform.localScale.y > 1f && Monkey.isMonkeyCollider)    
-            {
-                ReplayQuaternionJingu();
-            }
-            if (pivot.transform.localScale.y <= 1f && Monkey.isMonkeyCollider)
-            {
-                transform.SetParent(null);
-                _isFinishScale = true;
-                transform.rotation = target_0;
-                isReplayQuaternionJingu = false;    
-                pivot.transform.rotation = target_0;
-                transform.SetParent(handMonkey.transform);
-                isScaleJingu = true;
-                transform.localPosition = new Vector3(0.35f,0.52f,0);
-                //transform.localPosition = new Vector3(0,0,0);
-                scaleJingu = false;
-                doneScaleJingu = false;
-                isJinguCollider = true;
-                if (isAnimation)
-                {
-                    monkeyJumb.Play("MonkeyScaleJungu");
-                    isAnimation = false;
-                }
-            }
-
-            if (Monkey.isMonkeyCollider && isSwichMonkeyCollider)
-            {
-                isSwichMonkeyCollider = false;
-                Monkey.isMoveMonkeyLeftRight = true;
-                DetachMonkey();
-                ReplayQuaternionJingu();
+                    if (pivot.transform.localScale.y >= 20)
+                    {
+                        pivot.transform.localScale = defaultPivotScale;
+                    }
+                    break;
+                case JinguState.Rotating:
+                    // Logic xu ly khi dung scaling
+                    Debug.Log("Rotating...");
+                    isScalingOutAudioPlaying = false;
+                    RotateJingu();
+                    UpdateMonkeyAnimationOnRotating();
+                    break;
+                case JinguState.ScalingIn:
+                    Debug.Log("Scaling in...");
+                    // Login thu gay ve
+                    if (pivot.transform.localScale.y > 1f)    
+                    {
+                        ReplayQuaternionJingu();
+                    }
+                    else
+                    {
+                        Debug.Log("Back to init state");
+                        jinguState = JinguState.Init;
+                    }
+                    break;
             }
         }
+    }
+
+    private void OnMonkeyCollideWithObstacle()
+    {
+        Debug.Log("On Monkey Collide With Obstacle");
+        if (isFirstTimeCollide)
+        {
+            isFirstTimeCollide = false;
+            return;
+        }
+        
+        jinguState = JinguState.ScalingIn;
+        isMonkeyCollideWithObstacle = true;
+        Monkey.isMoveMonkeyLeftRight = true;
+        DetachMonkey();
+        ReplayQuaternionJingu();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Obstacle") || other.CompareTag("ObstacleDie") || other.CompareTag("StartGame") || other.CompareTag("EndGame"))
         {
-            Monkey.isMoveMonkeyLeftRight = true;
-            instanID = other.gameObject.GetInstanceID();
-            if (instanID != Monkey.isIntstanceID)
+            Debug.Log("Jingu Collide: " + other.gameObject.GetInstanceID() + ", " + Monkey.isIntstanceID);
+            if (other.gameObject.GetInstanceID() != Monkey.isIntstanceID)
             {
                 jinguColliderObstacle();
             }
+            
+            // Stop rotating
+            if (rotateSequence != null)
+            {
+                rotateSequence.Kill();
+                rotateSequence = null;
+            }
         }
     }
-    private void EffectsWhenSpinning()
+    private void UpdateMonkeyAnimationOnRotating()
     {
-        if (isRotation && Monkey.isRotationLeft)
+        if (rotateSequence == null)
+        {
+            return;
+        }
+
+        if (Monkey.isRotationLeft)
         {
             if (pivot.transform.localScale.y >= 2)
             {
@@ -159,17 +208,17 @@ public class Jingu : MonoBehaviour
                     monkeySpriteRenderer.sprite = spriteTwo;
                 }else
                 {
-                    monkeySpriteRenderer.sprite = spriteDefautl;
+                    monkeySpriteRenderer.sprite = spriteDefault;
                 }
             }
-            if (pivot.transform.rotation == target_Left)
+            if (pivot.transform.rotation == leftAngle)
             {
                 Monkey.isMoveMonkeyLeftRight = true;
                 DetachMonkey();
                 ReplayQuaternionJingu();
             }
         }
-        if (isRotation && Monkey.isRotationLeft == false)
+        if (Monkey.isRotationLeft == false)
         {
             if(pivot.transform.localScale.y >= 2)
             {
@@ -181,10 +230,10 @@ public class Jingu : MonoBehaviour
                     monkeySpriteRenderer.sprite = spriteTwo;
                 }else
                 {
-                    monkeySpriteRenderer.sprite = spriteDefautl;
+                    monkeySpriteRenderer.sprite = spriteDefault;
                 }
             }
-            if (pivot.transform.rotation == target_right)
+            if (pivot.transform.rotation == rightAngle)
             {
                 Monkey.isMoveMonkeyLeftRight = true;
                 DetachMonkey();
@@ -211,55 +260,70 @@ public class Jingu : MonoBehaviour
     public void DetachMonkey()
     {
         monkey.transform.SetParent(null);
-        monkey.transform.rotation = Quaternion.Lerp(monkey.transform.rotation,target_0,1);
-        isRotation = false;
-        isReplayQuaternionJingu = true;
+        monkey.transform.rotation = Quaternion.Lerp(monkey.transform.rotation,middleAngle,1);
+        isRotating = false;
+        isJinguScalingIn = true;
         transform.SetParent(null);
         pivot.transform.position = endPivot.transform.position;
     }
 
-    private void QuaternionjinguDotween()
+    private void RotateJingu()
     {
-        if (isRotation && Monkey.isRotationLeft)
+        if (rotateSequence == null)
         {
-            pivot.transform.DORotate(new Vector3(0, 0, 90), 1).onUpdate = delegate
+            rotateSequence = DOTween.Sequence();
+            Tweener rotateTweener = null;
+            if (Monkey.isRotationLeft)
             {
-                if (Monkey.isMonkeyCollider)
-                {
-                    return;    
-                }
-                monkey.transform.position = endPivot.transform.position;
-            };
-        }
+                rotateTweener = pivot.transform.DORotate(new Vector3(0, 0, 90), 1);
+            }
 
-        if (isRotation && Monkey.isRotationLeft == false)
-        {
-            pivot.transform.DORotate(new Vector3(0, 0, -90), 1).onUpdate = delegate
+            if (Monkey.isRotationLeft == false)
             {
-                if (Monkey.isMonkeyCollider)
+                rotateTweener = pivot.transform.DORotate(new Vector3(0, 0, -90), 1);
+            }
+
+            if (rotateTweener != null)
+            {
+                rotateSequence.Append(rotateTweener);
+                rotateTweener.onUpdate = delegate
                 {
-                    return;
-                }
-                monkey.transform.position = endPivot.transform.position;
-            };
+                    if (rotateSequence == null)
+                    {
+                        return;
+                    }
+
+                    monkey.transform.position = endPivot.transform.position;
+                };
+                rotateTweener.onComplete = OnRotatingComplete;
+            }
         }
     }
+
+    private void OnRotatingComplete()
+    {
+        Debug.Log("On Rotating Complete " + (rotateSequence == null));
+        if (rotateSequence != null)
+        {
+            jinguState = JinguState.StopRotating;
+        }
+    }
+
     private void PlayAudio()
     {
-        if (isPlayAudio && isReloadAudio)
+        if (!isScalingOutAudioPlaying)
         {
             isAudioSource.PlayOneShot(isAudioScaleJingu,0.2f);
-            isReloadAudio = false;
+            isScalingOutAudioPlaying = true;
         }
     }
     public void ScaleJingu()
     {
-        scaleJingu = true;
-        doneScaleJingu = false;
+        jinguState = JinguState.ScalingOut;
     }
+    
     public void DoneScaleJingu()
     {
-        scaleJingu = false;
-        doneScaleJingu = true;
+        jinguState = JinguState.Rotating;
     }
 }

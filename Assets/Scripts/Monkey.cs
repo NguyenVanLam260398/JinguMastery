@@ -36,6 +36,11 @@ public class Monkey : MonoBehaviour
     public AudioClip isWin;
     public GameObject pivot;
     public GameObject earMonkey;
+
+    public delegate void OnMonkeyCollide();
+
+    public static OnMonkeyCollide onMonkeyCollide;
+    
     void Start()
     {
         monkeySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -50,7 +55,7 @@ public class Monkey : MonoBehaviour
     {
             monkeyRigrid.bodyType = RigidbodyType2D.Kinematic;
             monkeyAnimator.SetBool("isMove",false);
-            if (_jinGu.isRotation == false)
+            if (_jinGu.isRotating == false)
             {
                 monkeyRigrid.bodyType = RigidbodyType2D.Dynamic;
             }
@@ -102,8 +107,7 @@ public class Monkey : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
-    {
-          
+    {   
         if (other.CompareTag("Key"))
         {
             other.gameObject.SetActive(false);
@@ -122,6 +126,7 @@ public class Monkey : MonoBehaviour
                 monkeyAnimator.enabled = false;
                 monkeySpriteRenderer.sprite = spriteMonkeyDie;
                 isMonkeyCollider = true;
+                FireOnMonkeyCollideEvent();
             }
             else
             {
@@ -144,6 +149,7 @@ public class Monkey : MonoBehaviour
     {
         transform.rotation = monkeyRotationDefaut;
         isMonkeyCollider = true;
+        FireOnMonkeyCollideEvent();
     }
 
     private void GameOver()
@@ -177,5 +183,13 @@ public class Monkey : MonoBehaviour
         isButtonLeft = false;
         isButtonRight = false;
         monkeyAnimator.Play("MonkeyIdle");
+    }
+
+    private void FireOnMonkeyCollideEvent()
+    {
+        if (onMonkeyCollide != null)
+        {
+            onMonkeyCollide();
+        }
     }
 }
